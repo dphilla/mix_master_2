@@ -1,0 +1,10 @@
+
+
+<%= form_for @artist do |f| %>
+  <p><%= f.label "Artist Name" %>
+  <%= f.text_field "name" %></p>
+  <p><%= f.label "Artist Image Path" %>
+  <%= f.text_field "image_path" %></p>
+
+  <%= f.submit  %>
+<% end %>
