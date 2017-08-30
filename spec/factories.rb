@@ -4,7 +4,10 @@ FactoryGirl.define do
     playlist
   end
   factory :playlist do
-    name "MyString"
+    sequence :name do |n|
+       "MyString#{n}"
+    end
+
   end
 
   factory :artist do
