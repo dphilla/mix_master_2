@@ -4,17 +4,8 @@
 <%= link_to "Edit", edit_artist_path(@artist) %>
 <%= link_to "Delete", artist_path(@artist), method: "delete" %>
 
- <% if  @song.errors.any? %>
-   <h2><%= pluralize(@song.errors.count, "error") %>
-   prohibited this content from being saved:</h2>
-   <ul>
-    <% @song.errors.full_messages.each do |message| %>
-      <li> <%= message %></li>
-    <% end %>
-   </ul>
- <% end %>
 
-
+<%= render partial: 'shared/errors', locals: {target: @song} %>
 <p>Songs: <% @artist.songs.each do |song| %>
             <%= song.title %>
           <% end %> </p>

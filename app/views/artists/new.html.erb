@@ -1,13 +1,6 @@
 
 <h1>Create a new Artist</h1>
 
- <% if  @artist.errors.any? %>
-   <h2><%= pluralize(@artist.errors.count, "error") %>
-   prohibited this content from being saved:</h2>
-   <ul>
-    <% @artist.errors.full_messages.each do |message| %>
-      <li> <%= message %></li>
-    <% end %>
-   </ul>
- <% end %>
+
+<%= render partial: 'shared/errors', locals: {target: @artist} %>
 <%= render partial: 'form' %>
