@@ -10,7 +10,7 @@ describe 'user' do
     click_on "Create Song"
 
     expect(page).to have_content("One Love")
-
+    expect(current_path).to eq("/songs/#{Song.last.id}")
   end
 
   it "cannot submits invalid data" do #sad path

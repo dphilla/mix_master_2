@@ -4,11 +4,15 @@ class SongsController < ApplicationController
      @song = Song.new
    end
 
+   def show
+    @song = Song.find(params[:id])
+   end
+
    def create
     @artist = Artist.find(params[:artist_id])
     @song = @artist.songs.new(song_params)
     if @song.save
-      redirect_to artist_path(@song.artist)
+      redirect_to song_path(@song)
     else
       render 'artists/show'
     end
