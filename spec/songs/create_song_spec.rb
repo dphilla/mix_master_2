@@ -19,7 +19,7 @@ describe 'user' do
 
     visit "/artists/#{artist.id}"
     click_on "Create Song"
-#save_and_open_page
+
     expect(page).to have_content("Title can't be blank")
 
   end
